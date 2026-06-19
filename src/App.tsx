@@ -79,6 +79,7 @@ export default function Page() {
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
           <div className="my-4 text-5xl font-bold text-pink-600 drop-shadow-md">WOOOOOO!!! I love you pookie!! ;))</div>
+          <audio autoPlay loop src={`${import.meta.env.BASE_URL}song.mp3`} />
         </>
       ) : (
         <>
