@@ -34,10 +34,10 @@ export default function Page() {
   };
 
   const getNoButtonImage = () => {
-    // We have 10 images (1.jpg to 10.jpg). 
-    // We use Math.min to ensure we cap out at 10.jpg even if they keep clicking No.
+    // We have 10 images: 1.jpeg to 9.jpeg, and last.jpeg
     const imageNumber = Math.min(noCount + 1, 10);
-    return `${import.meta.env.BASE_URL}custom_images/${imageNumber}.jpg`;
+    const fileName = imageNumber === 10 ? 'last.jpeg' : `${imageNumber}.jpeg`;
+    return `${import.meta.env.BASE_URL}custom_images/${fileName}`;
   };
 
   // Generate random floating hearts for the background
