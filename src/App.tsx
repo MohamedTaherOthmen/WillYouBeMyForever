@@ -20,14 +20,14 @@ export default function Page() {
       "Aaaaaaa3 !! Are you sure ? ",
       "What if I asked really nicely?",
       "Amourty Please",
-      "Gateau glace Cerise Chocolat Noir !!!",
-      "Nakhoulik Glace Chocolat Noir o Cerise",
-      "PLEASE POOKIE",
-      "But :*(",
+      "Gateau glacé Cerise Chocolat Noir !!!",
+      "Bahy nzidd Nakhoulik maah Glace Chocolat Noir o Cerise",
+      "Bahyy Ameel Tala lfouk ala tssawrna ma7leennaa !!",
+      "Tssawer li rytehom Hathom el kol ma hanouch alikk ???",
       "I am going to die",
       "Yep im dead",
       "Walahi la tihcheemm !! ok ur talking to Taher's ghost",
-      "please babe",
+      "Makhyeebb Rasssekkk",
       ":((((",
       "PRETTY PLEASE",
       "Estoy muerto",
@@ -41,7 +41,7 @@ export default function Page() {
     if (noCount === 0) {
       return "https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif";
     }
-    
+
     // When she clicks "No" (noCount > 0), use the custom images.
     // noCount = 1 -> 1.jpeg, noCount = 2 -> 2.jpeg, etc. up to 10 -> last.jpeg
     const imageNumber = Math.min(noCount, 10);
@@ -55,7 +55,7 @@ export default function Page() {
     const animationDuration = 5 + Math.random() * 10;
     const animationDelay = Math.random() * 10;
     const fontSize = 1 + Math.random() * 1.5;
-    
+
     return (
       <div
         key={i}
