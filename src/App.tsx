@@ -4,10 +4,14 @@ import { useState } from "react";
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
+  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
   const yesButtonSize = noCount * 20 + 16;
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
+    const randomX = Math.floor(Math.random() * 80) + 10; // Between 10% and 90%
+    const randomY = Math.floor(Math.random() * 80) + 10; // Between 10% and 90%
+    setNoButtonPosition({ x: randomX, y: randomY });
   };
 
   const getNoButtonText = () => {
@@ -93,7 +97,8 @@ export default function Page() {
             </button>
             <button
               onClick={handleNoClick}
-              className="rounded-full bg-red-500 px-6 py-3 font-bold text-white shadow-lg transition-transform hover:scale-110 hover:bg-red-600"
+              className={`rounded-full bg-red-500 px-6 py-3 font-bold text-white shadow-lg transition-transform hover:scale-110 hover:bg-red-600 ${noCount > 0 ? 'fixed' : ''}`}
+              style={noCount > 0 ? { left: `${noButtonPosition.x}%`, top: `${noButtonPosition.y}%` } : {}}
             >
               {noCount === 0 ? "No" : getNoButtonText()}
             </button>
