@@ -34,8 +34,13 @@ export default function Page() {
   };
 
   const getNoButtonImage = () => {
-    // We have 10 images: 1.jpeg to 9.jpeg, and last.jpeg
-    const imageNumber = Math.min(noCount + 1, 10);
+    if (noCount === 0) {
+      return "https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif";
+    }
+    
+    // When she clicks "No" (noCount > 0), use the custom images.
+    // noCount = 1 -> 1.jpeg, noCount = 2 -> 2.jpeg, etc. up to 10 -> last.jpeg
+    const imageNumber = Math.min(noCount, 10);
     const fileName = imageNumber === 10 ? 'last.jpeg' : `${imageNumber}.jpeg`;
     return `${import.meta.env.BASE_URL}custom_images/${fileName}`;
   };
